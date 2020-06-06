@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.iu.lhj3.board.NoticeDAO">
+  
+  	<!-- 현재 파일내에서 중복 X -->
+  	<!-- 다른 맵퍼의 id와는 중복 가능 -->
+  	<!-- 맵퍼의 id는 DAO의 메서드명과 일치 -->
+  	<insert id="setInsert" parameterType="com.iu.lhj3.board.BoardDAO">
+  		insert into notice (num, title, writer, contents , createDate, hit)
+  		values (#{num}, #{title}, #{writer}, #{contents}, sysdate, #{hit})
+  	</insert>
+  	
+  	<delete id="setDelete" parameterType="com.iu.lhj3.board.BoardDAO">
+  		delete notice where num=#{num}
+  	</delete>  
+  	
+  	<select id="getSelect" resultType="com.iu.lhj3.board.NoticeVO" parameterType="com.iu.lhj3.board.BoardDAO">
+  		select * from notice where num=#{num}
+  	</select>
+  	
+  	<select id="getSelectList" resultType="com.iu.lhj3.board.NoticeVO">
+  		select * from notice
+  	</select>
+  	
+ 	<update id="setUpdate" parameterType="com.iu.lhj3.board.BoardDAO">
+  		update notice set title=#{title}, contents=#{contents} where num=#{num}
+  	</update> 
+  
+  </mapper>

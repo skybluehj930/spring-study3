@@ -12,7 +12,7 @@
 <body>
 <div class="container">
   <h2>Join form</h2>
-  <form action="./member/memberJoin" method="post">
+  <form action="./member/memberJoin" method="post" enctype="multipart/form-data">
   
     <div class="form-group">
       <label for="id">Id:</label>
@@ -25,6 +25,11 @@
     </div>
     
     <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+    </div>
+    
+    <div class="form-group">
       <label for="id">Age:</label>
       <input type="text" class="form-control" id="age" placeholder="Enter Age" name="age">
     </div>
@@ -32,6 +37,11 @@
     <div class="form-group">
       <label for="id">Birth:</label>
       <input type="date" class="form-control" id="Birth" placeholder="Enter Birth" name="birth">
+    </div>
+    
+    <div class="form-group">
+      <label for="pic">Picture:</label>
+      <input type="file" class="form-control" id="pic" name="pic">
     </div>
     
     <div class="checkbox">

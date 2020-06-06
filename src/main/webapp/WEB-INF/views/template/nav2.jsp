@@ -7,7 +7,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-      <li><a href="${pageContext.request.contextPath}/notice/noticeList">Notice</a></li>
+      <li><a href="${pageContext.request.contextPath}/member/memberPage">Page 1</a></li>
       <li><a href="${pageContext.request.contextPath}/member/memberPage">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">

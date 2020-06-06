@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.iu.lhj3.member.MemberDAO">
+  
+  	<!-- 현재 파일내에서 중복 X -->
+  	<!-- 다른 맵퍼의 id와는 중복 가능 -->
+  	<!-- 맵퍼의 id는 DAO의 메서드명과 일치 -->
+  	<insert id="setMember" parameterType="com.iu.lhj3.member.MemberVO">
+  		insert into member
+  		values (#{id}, #{pw}, #{name}, #{age}, #{birth})
+  	</insert>
+  	
+  	<delete id="setDelete" parameterType="com.iu.lhj3.member.MemberVO">
+  		delete member where id=#{id}
+  	</delete>
+  	
+  	<select id="getMember" resultType="com.iu.lhj3.member.MemberVO" parameterType="map">
+  		select * from member where id=#{vo.id} and pw=#{vo.pw}
+  	</select>
+  	
+  	<update id="setUpdate" parameterType="com.iu.lhj3.member.MemberVO">
+  		update member set name=#{name}, age=#{age} where id=#{id}
+  	</update>
+  
+  </mapper>
